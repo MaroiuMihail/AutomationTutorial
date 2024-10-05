@@ -1,0 +1,6 @@
+List<String> hobbiesValue = Arrays.asList("Sports", "Music");
+        List<WebElement> hobbiesOptionsList = driver.findElements(By.xpath("//div[@id='hobbiesWrapper']//label[@class='custom-control-label']"));
+        for (int index = 0; index < hobbiesOptionsList.size(); index++) {
+            String currentText = hobbiesOptionsList.get(index).getText();
+            if (hobbiesValue.contains(currentText)) {
+                js.executeScript("arguments[0].click()", hobbiesOptionsList.get(index));
