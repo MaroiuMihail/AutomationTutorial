@@ -23,6 +23,7 @@ public class PracticeFormTest {
         //facem browserul maximize
         driver.manage().window().maximize();
 
+
         WebElement formsMenu= driver.findElement(By.xpath("//h5[text()='Forms']"));
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].click();", formsMenu);

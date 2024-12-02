@@ -1,5 +1,6 @@
 package tests;
 
+import helpMethods.ElementMethods;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -26,12 +27,13 @@ public class WebTabelTest {
         //facem browserul maximize
         driver.manage().window().maximize();
 
+        ElementMethods elementMethods = new ElementMethods(driver);
+
         WebElement elementsMenu= driver.findElement(By.xpath("//h5[text()='Elements']"));
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].click();", elementsMenu);
+        elementMethods.clickJSElement(elementsMenu);
 
         WebElement webTableSubMenu= driver.findElement(By.xpath("//span[text()='Web Tables']"));
-        js.executeScript("arguments[0].click();", webTableSubMenu);
+        elementMethods.clickJSElement(webTableSubMenu);
 
         //validam dimensiunea initiala a tabelului
 
@@ -40,7 +42,7 @@ public class WebTabelTest {
 
         //definim un element
         WebElement addElement = driver.findElement(By.id("addNewRecordButton"));
-        addElement.click();
+        elementMethods.clickElement(addElement);
 
         WebElement firstNameElement = driver.findElement(By.id("firstName"));
         String firstNameValue = "Maroiu";
@@ -86,7 +88,7 @@ public class WebTabelTest {
         //edit functionality
 
         WebElement editElement = driver.findElement(By.id("edit-record-4"));
-        js.executeScript("arguments[0].click();",editElement);
+        elementMethods.clickJSElement(editElement);
 
         WebElement editfirstNameElement = driver.findElement(By.id("firstName"));
         String editfirstNameValue = "Costin";
@@ -136,7 +138,7 @@ public class WebTabelTest {
         //Xpath relativ mereu - cu 2 slash-uri
 
         WebElement deleteElement = driver.findElement(By.id("delete-record-4"));
-        js.executeScript("arguments[0].click();", deleteElement);
+        elementMethods.clickJSElement(deleteElement);
 
         newtableContentList= driver.findElements(By.xpath("//div[@class = 'rt-tbody']/div/div[@class = 'rt-tr -odd' or @class = 'rt-tr -even']"));
         Assert.assertEquals(tableContentList.size(), 3, "Default size for table is not 3");
