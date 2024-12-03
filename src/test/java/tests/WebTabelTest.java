@@ -46,30 +46,30 @@ public class WebTabelTest {
 
         WebElement firstNameElement = driver.findElement(By.id("firstName"));
         String firstNameValue = "Maroiu";
-        firstNameElement.sendKeys(firstNameValue);
+        elementMethods.fillElement(firstNameElement, firstNameValue);
 
         WebElement lastNameElement = driver.findElement(By.id("lastName"));
         String lastNameValue = "Mihail";
-        lastNameElement.sendKeys((lastNameValue));
+        elementMethods.fillElement(lastNameElement, lastNameValue);
 
         WebElement userEmailElement = driver.findElement(By.id("userEmail"));
         String userEmailValue = "mihai.maroiu88@gmail.com";
-        userEmailElement.sendKeys(userEmailValue);
+        elementMethods.fillElement(userEmailElement, userEmailValue);
 
         WebElement ageElement = driver.findElement(By.id("age"));
         String ageValue = "23";
-        ageElement.sendKeys(ageValue);
+        elementMethods.fillElement(ageElement, ageValue);
 
         WebElement salaryLabelElement = driver.findElement(By.id("salary"));
         String salaryLabelValue = "3000";
-        salaryLabelElement.sendKeys(salaryLabelValue);
+        elementMethods.fillElement(salaryLabelElement, salaryLabelValue);
 
         WebElement departmentElement = driver.findElement(By.id("department"));
         String departmentValue = "Test";
-        departmentElement.sendKeys(departmentValue);
+        elementMethods.fillElement(departmentElement, departmentValue);
 
         WebElement submitElement = driver.findElement(By.id("submit"));
-        submitElement.click();
+        elementMethods.clickElement(submitElement);
 
         //validam noua dimeniune a tabelului
         List<WebElement> newtableContentList = driver.findElements(By.xpath("//div[@class = 'rt-tbody']/div/div[@class = 'rt-tr -odd' or @class = 'rt-tr -even']"));
@@ -92,36 +92,31 @@ public class WebTabelTest {
 
         WebElement editfirstNameElement = driver.findElement(By.id("firstName"));
         String editfirstNameValue = "Costin";
-        editfirstNameElement.clear();
-        editfirstNameElement.sendKeys(editfirstNameValue);
+        elementMethods.clearEditElement(editfirstNameElement, editfirstNameValue);
+
 
         WebElement editlastNameElement = driver.findElement(By.id("lastName"));
         String editlastNameValue = "Stefan";
-        editlastNameElement.clear();
-        editlastNameElement.sendKeys((editlastNameValue));
+        elementMethods.clearEditElement(editlastNameElement, editlastNameValue);
 
         WebElement edituserEmailElement = driver.findElement(By.id("userEmail"));
         String edituserEmailValue = "costin.stefan@gmail.com";
-        edituserEmailElement.clear();
-        edituserEmailElement.sendKeys(edituserEmailValue);
+        elementMethods.clearEditElement(edituserEmailElement, edituserEmailValue);
 
         WebElement editageElement = driver.findElement(By.id("age"));
         String editageValue = "28";
-        editageElement.clear();
-        editageElement.sendKeys(editageValue);
+        elementMethods.clearEditElement(editageElement, editageValue);
 
         WebElement editsalaryLabelElement = driver.findElement(By.id("salary"));
         String editsalaryLabelValue = "4000";
-        editsalaryLabelElement.clear();
-        editsalaryLabelElement.sendKeys(editsalaryLabelValue);
+        elementMethods.clearEditElement(editsalaryLabelElement, editsalaryLabelValue);
 
         WebElement editdepartmentElement = driver.findElement(By.id("department"));
         String editdepartmentValue = "IT";
-        editdepartmentElement.clear();
-        editdepartmentElement.sendKeys(editdepartmentValue);
+        elementMethods.clearEditElement(editdepartmentElement, editdepartmentValue);
 
         WebElement editsubmitElement = driver.findElement(By.id("submit"));
-        editsubmitElement.click();
+        elementMethods.clickElement(editsubmitElement);
 
         //validam valorile modificate din tabel
         rowContent= newtableContentList.get(3).getText();
