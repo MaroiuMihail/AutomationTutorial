@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.Test;
+import pages.HomePage;
 
 public class FramesTest {
     public WebDriver driver;
@@ -23,8 +24,8 @@ public class FramesTest {
         FrameMethods frameMethods = new FrameMethods(driver);
 
 
-        WebElement alertframewindowMenu = driver.findElement(By.xpath("//h5[text()='Alerts, Frame & Windows']"));
-        elementMethods.clickJSElement(alertframewindowMenu);
+        HomePage homePage = new HomePage(driver);
+        homePage.clickAlertFrameWindow();
 
         WebElement framesSubMenu= driver.findElement(By.xpath("//span[text()='Frames']"));
         elementMethods.clickJSElement(framesSubMenu);

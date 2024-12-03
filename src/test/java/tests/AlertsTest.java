@@ -9,6 +9,9 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
+import pages.AlertFrameWindowPage;
+import pages.AlertPage;
+import pages.HomePage;
 
 import java.time.Duration;
 
@@ -25,30 +28,13 @@ public class AlertsTest {
         //wait implicit
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
-        ElementMethods elementMethods = new ElementMethods(driver);
-        AlertMethods alertMethods = new AlertMethods(driver);
+        HomePage homePage = new HomePage(driver);
+        homePage.clickAlertFrameWindow();
 
-        WebElement alertFrameWindowMenu = driver.findElement(By.xpath("//h5[text()='Alerts, Frame & Windows']"));
-        elementMethods.clickJSElement(alertFrameWindowMenu);
+        AlertFrameWindowPage alertFrameWindowPage = new AlertFrameWindowPage(driver);
+        alertFrameWindowPage.clickAlert();
 
-        WebElement alertsElement = driver.findElement(By.xpath("//span[text()='Alerts']"));
-        elementMethods.clickElement(alertsElement);
-
-        WebElement okAlert = driver.findElement(By.id("alertButton"));
-        elementMethods.clickElement(okAlert);
-        alertMethods.acceptAlert();
-
-        WebElement timerAlertButtonElement = driver.findElement(By.id("timerAlertButton"));
-        elementMethods.clickJSElement(timerAlertButtonElement);
-        alertMethods.acceptAlert();
-
-        WebElement alertConfirm = driver.findElement(By.id("confirmButton"));
-        elementMethods.clickElement(alertConfirm);
-        alertMethods.dismissAlert();
-
-        WebElement promptButtonAlert = driver.findElement(By.id("promtButton"));
-        elementMethods.clickElement(promptButtonAlert);
-        alertMethods.fillAlert("This is a test");
-
+        AlertPage alertPage = new AlertPage(driver);
+       alertPage.dealAlertProcess("Alert");
     }
     }

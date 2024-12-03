@@ -138,18 +138,5 @@ public class WebTabelTest {
         newtableContentList= driver.findElements(By.xpath("//div[@class = 'rt-tbody']/div/div[@class = 'rt-tr -odd' or @class = 'rt-tr -even']"));
         Assert.assertEquals(tableContentList.size(), 3, "Default size for table is not 3");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }

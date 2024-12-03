@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.Test;
+import pages.HomePage;
 
 import java.time.Duration;
 
@@ -29,8 +30,8 @@ public class NestedFramesTest {
         ElementMethods elementMethods = new ElementMethods(driver);
         FrameMethods frameMethods = new FrameMethods(driver);
 
-        WebElement alertFrameWindowsMenu = driver.findElement(By.xpath("//h5[text()='Alerts, Frame & Windows']"));
-        elementMethods.clickJSElement(alertFrameWindowsMenu);
+        HomePage homePage = new HomePage(driver);
+        homePage.clickAlertFrameWindow();
 
         WebElement nestedFramesSubMenu = driver.findElement(By.xpath("//span[text()='Nested Frames']"));
         elementMethods.clickJSElement(nestedFramesSubMenu);
