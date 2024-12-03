@@ -1,6 +1,7 @@
 package helpMethods;
 
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -35,9 +36,16 @@ public class ElementMethods {
 
     }
 
+    public void fillPressElement(WebElement element, String text, Keys value){
+        waitVisibleElement(element);
+        element.sendKeys(text);
+        element.sendKeys(value);
+    }
+
     public void waitVisibleElement(WebElement element){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOf(element));
 
     }
+
 }

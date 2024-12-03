@@ -1,6 +1,7 @@
 package tests;
 
 import helpMethods.ElementMethods;
+import helpMethods.FrameMethods;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -19,6 +20,7 @@ public class FramesTest {
         driver.manage().window().maximize();
 
         ElementMethods elementMethods = new ElementMethods(driver);
+        FrameMethods frameMethods = new FrameMethods(driver);
 
 
         WebElement alertframewindowMenu = driver.findElement(By.xpath("//h5[text()='Alerts, Frame & Windows']"));
@@ -28,15 +30,14 @@ public class FramesTest {
         elementMethods.clickJSElement(framesSubMenu);
 
         //ne mutam pe un Iframe
-        driver.switchTo().frame("frame1");
+        frameMethods.switchToSpecificIframe("frame1");
 
         WebElement sampleTextElement = driver.findElement(By.id("sampleHeading"));
         System.out.println(sampleTextElement.getText());
 
-        driver.switchTo().parentFrame();
+        frameMethods.switchToParentIframe();
 
-        driver.switchTo().frame("frame2");
-
+        frameMethods.switchToSpecificIframe("frame2");
 
         WebElement secondsampleTextElement = driver.findElement(By.id("sampleHeading"));
         System.out.println(secondsampleTextElement.getText());
