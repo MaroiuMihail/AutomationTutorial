@@ -14,23 +14,17 @@ import org.testng.annotations.Test;
 import pages.ElementPage;
 import pages.HomePage;
 import pages.WebTablePage;
+import sharedData.SharedData;
 
 import java.sql.BatchUpdateException;
 import java.util.List;
 import java.util.TreeSet;
 
-public class WebTabelTest {
-    public WebDriver driver;
+public class WebTabelTest extends SharedData {
 
     @Test
     public void metodaTest () {
 
-        //deschidem un browser
-        driver=new EdgeDriver();
-        //accesam un URL
-        driver.get("https://demoqa.com/");
-        //facem browserul maximize
-        driver.manage().window().maximize();
 
         HomePage homePage = new HomePage(driver);
         homePage.clickElementsMenu();

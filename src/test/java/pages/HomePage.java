@@ -7,21 +7,18 @@ import org.openqa.selenium.devtools.v85.page.Page;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class HomePage {
+public class HomePage extends BasePage{
 
-    public WebDriver driver;
-    public ElementMethods elementMethods;
 
-    public HomePage(WebDriver driver) {
-        this.driver = driver;
-        elementMethods = new ElementMethods(this.driver);
-        PageFactory.initElements(this.driver, this);
-    }
 
     @FindBy(xpath = "//h5[text()='Alerts, Frame & Windows']")
     public WebElement alertFrameWindowMenu;
     @FindBy(xpath = "//h5[text()='Elements']")
     public WebElement elementsMenu;
+
+    public HomePage(WebDriver driver) {
+        super(driver);
+    }
 
     public void clickAlertFrameWindow(){
         elementMethods.clickJSElement(alertFrameWindowMenu);

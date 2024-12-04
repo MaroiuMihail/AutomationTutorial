@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name = "Smoke Suite">
+    <test name = "Smoke Suite" parallel = "classes" thread-count="3">
+        <classes>
+            <class name = "tests.FramesTest" />
+            <class name = "tests.NestedFramesTest" />
+            <class name = "tests.TabWindowTest" />
+            <class name = "tests.PracticeFormTest" />
+            <class name = "tests.AlertsTest" />
+            <class name = "tests.WebTabelTest" />
+
+        </classes>
+    </test>
+</suite>

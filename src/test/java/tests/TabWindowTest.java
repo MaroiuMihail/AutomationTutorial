@@ -13,20 +13,17 @@ import org.testng.annotations.Test;
 import pages.AlertFrameWindowPage;
 import pages.HomePage;
 import pages.TabWindowPage;
+import sharedData.SharedData;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class TabWindowTest {
-    public WebDriver driver;
+public class TabWindowTest extends SharedData {
 
     @Test
     public void metodaTest () {
 
-        driver = new EdgeDriver();
-        driver.get("https://demoqa.com/");
-        driver.manage().window().maximize();
 
         HomePage homePage = new HomePage(driver);
         homePage.clickAlertFrameWindow();

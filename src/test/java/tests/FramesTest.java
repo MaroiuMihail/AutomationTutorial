@@ -11,16 +11,13 @@ import org.testng.annotations.Test;
 import pages.AlertFrameWindowPage;
 import pages.FramesPage;
 import pages.HomePage;
+import sharedData.SharedData;
 
-public class FramesTest {
-    public WebDriver driver;
+public class FramesTest extends SharedData {
 
     @Test
     public void metodaTest () {
 
-        driver = new EdgeDriver();
-        driver.get("https://demoqa.com/");
-        driver.manage().window().maximize();
 
         HomePage homePage = new HomePage(driver);
         homePage.clickAlertFrameWindow();

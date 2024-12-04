@@ -6,16 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class AlertFrameWindowPage {
+public class AlertFrameWindowPage extends BasePage {
 
-    public WebDriver driver;
-    public ElementMethods elementMethods;
-
-    public AlertFrameWindowPage(WebDriver driver) {
-        this.driver = driver;
-        elementMethods = new ElementMethods(this.driver);
-        PageFactory.initElements(this.driver, this);
-    }
 
     @FindBy(xpath = "//span[text()='Alerts']")
     public WebElement alertsElement;
@@ -23,6 +15,10 @@ public class AlertFrameWindowPage {
     public WebElement browserwindowMenu;
     @FindBy(xpath = "//span[text()='Frames']")
     public WebElement framesSubMenu;
+
+    public AlertFrameWindowPage(WebDriver driver) {
+        super(driver);
+    }
 
     public void  clickAlert(){
         elementMethods.clickElement(alertsElement);

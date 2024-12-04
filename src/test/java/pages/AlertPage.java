@@ -8,37 +8,34 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class AlertPage {
-    public WebDriver driver;
-    public ElementMethods elementMethods;
-    public AlertMethods alertMethods;
+public class AlertPage extends BasePage{
 
     public AlertPage(WebDriver driver) {
-        this.driver = driver;
-        elementMethods = new ElementMethods(this.driver);
-        alertMethods = new AlertMethods(this.driver);
-        PageFactory.initElements(this.driver, this);
+        super(driver);
     }
 
     @FindBy(id = "alertButton")
-    public WebElement okAlert;
+    public WebElement okAlertElement;
+
     @FindBy(id = "timerAlertButton")
     public  WebElement timerAlertButtonElement;
+
     @FindBy(id = "confirmButton")
-    public  WebElement alertConfirm;
-    @FindBy(id = "promtButton")
-    public WebElement promptButtonAlert;
+    public  WebElement alertConfirmElement;
+
+    @FindBy(id = "promptButton")
+    public WebElement promptButtonAlertElement;
+
 
     public void dealAlertProcess(String text){
-        elementMethods.clickElement(okAlert);
+        elementMethods.clickElement(okAlertElement);
         alertMethods.acceptAlert();
         elementMethods.clickJSElement(timerAlertButtonElement);
         alertMethods.acceptAlert();
-        elementMethods.clickElement(alertConfirm);
+        elementMethods.clickJSElement(alertConfirmElement);
         alertMethods.dismissAlert();
-        elementMethods.clickElement(promptButtonAlert);
+        elementMethods.clickElement(promptButtonAlertElement);
         alertMethods.fillAlert(text);
-
     }
 
 

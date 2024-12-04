@@ -10,14 +10,9 @@ import org.testng.Assert;
 
 import java.util.List;
 
-public class WebTablePage {
-    public WebDriver driver;
-    public ElementMethods elementMethods;
-
+public class WebTablePage extends BasePage{
     public WebTablePage(WebDriver driver) {
-        this.driver = driver;
-        elementMethods = new ElementMethods(this.driver);
-        PageFactory.initElements(this.driver, this);
+        super(driver);
     }
 
     @FindBy(xpath = "//div[@class = 'rt-tbody']/div/div[@class = 'rt-tr -odd' or @class = 'rt-tr -even']")
@@ -57,6 +52,8 @@ public class WebTablePage {
     @FindBy(id = "delete-record-4")
     public WebElement deleteElement;
 
+
+
     public void createProcess(String firstNameValue, String lastNameValue, String userEmailValue,
                               String ageValue, String salaryLabelValue, String departmentValue,
                               int tableSize){
@@ -72,7 +69,7 @@ public class WebTablePage {
         elementMethods.clickElement(submitElement);
         Assert.assertEquals(newtableContentList.size(), tableSize+1, "Default size for table is not "+tableSize);
 
-        String rowContent= newtableContentList.get(tableSize).getText();
+       String rowContent= newtableContentList.get(tableSize).getText();
         System.out.println(rowContent);
         Assert.assertTrue(rowContent.contains(firstNameValue), "The last row does not contain first name value ");
         Assert.assertTrue(rowContent.contains(lastNameValue), "The last row does not contain last name value ");

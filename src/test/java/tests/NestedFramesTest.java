@@ -8,24 +8,16 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.Test;
 import pages.HomePage;
+import sharedData.SharedData;
 
 import java.time.Duration;
 
-public class NestedFramesTest {
+public class NestedFramesTest extends SharedData {
 
-    public WebDriver driver;
 
     @Test
     public void metodaTest(){
 
-        //deschidem un browser
-        driver = new EdgeDriver();
-        //accesam un URL
-        driver.get("https://demoqa.com/");
-        //facem browserul maximize
-        driver.manage().window().maximize();
-        //wait implicit
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         ElementMethods elementMethods = new ElementMethods(driver);
         FrameMethods frameMethods = new FrameMethods(driver);
