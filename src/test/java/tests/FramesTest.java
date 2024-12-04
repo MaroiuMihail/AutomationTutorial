@@ -8,6 +8,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.Test;
+import pages.AlertFrameWindowPage;
+import pages.FramesPage;
 import pages.HomePage;
 
 public class FramesTest {
@@ -20,31 +22,14 @@ public class FramesTest {
         driver.get("https://demoqa.com/");
         driver.manage().window().maximize();
 
-        ElementMethods elementMethods = new ElementMethods(driver);
-        FrameMethods frameMethods = new FrameMethods(driver);
-
-
         HomePage homePage = new HomePage(driver);
         homePage.clickAlertFrameWindow();
 
-        WebElement framesSubMenu= driver.findElement(By.xpath("//span[text()='Frames']"));
-        elementMethods.clickJSElement(framesSubMenu);
+        AlertFrameWindowPage alertFrameWindowPage = new AlertFrameWindowPage(driver);
+        alertFrameWindowPage.clickFramesSubMenu();
 
-        //ne mutam pe un Iframe
-        frameMethods.switchToSpecificIframe("frame1");
-
-        WebElement sampleTextElement = driver.findElement(By.id("sampleHeading"));
-        System.out.println(sampleTextElement.getText());
-
-        frameMethods.switchToParentIframe();
-
-        frameMethods.switchToSpecificIframe("frame2");
-
-        WebElement secondsampleTextElement = driver.findElement(By.id("sampleHeading"));
-        System.out.println(secondsampleTextElement.getText());
-
-        //tema - nested frames
-
-
+        FramesPage framesPage = new FramesPage(driver);
+        framesPage.dealFirstIframe();
+        framesPage.dealSecondIframe();
     }
 }
