@@ -10,11 +10,11 @@ public class AlertFrameWindowPage extends BasePage {
 
 
     @FindBy(xpath = "//span[text()='Alerts']")
-    public WebElement alertsElement;
+    private WebElement alertsElement;
     @FindBy(xpath = "//span[text()='Browser Windows']")
-    public WebElement browserwindowMenu;
+    private WebElement browserwindowMenu;
     @FindBy(xpath = "//span[text()='Frames']")
-    public WebElement framesSubMenu;
+    private WebElement framesSubMenu;
 
     public AlertFrameWindowPage(WebDriver driver) {
         super(driver);

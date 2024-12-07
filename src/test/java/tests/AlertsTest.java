@@ -22,13 +22,13 @@ public class AlertsTest extends SharedData {
     public void metodaTest () {
 
 
-        HomePage homePage = new HomePage(driver);
+        HomePage homePage = new HomePage(getDriver());
         homePage.clickAlertFrameWindow();
 
-        AlertFrameWindowPage alertFrameWindowPage = new AlertFrameWindowPage(driver);
+        AlertFrameWindowPage alertFrameWindowPage = new AlertFrameWindowPage(getDriver());
         alertFrameWindowPage.clickAlert();
 
-        AlertPage alertPage = new AlertPage(driver);
+        AlertPage alertPage = new AlertPage(getDriver());
         alertPage.dealAlertProcess("This is a test");
     }
 }

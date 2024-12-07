@@ -25,13 +25,13 @@ public class TabWindowTest extends SharedData {
     public void metodaTest () {
 
 
-        HomePage homePage = new HomePage(driver);
+        HomePage homePage = new HomePage(getDriver());
         homePage.clickAlertFrameWindow();
 
-        AlertFrameWindowPage alertFrameWindowPage = new AlertFrameWindowPage(driver);
+        AlertFrameWindowPage alertFrameWindowPage = new AlertFrameWindowPage(getDriver());
         alertFrameWindowPage.clickBrowserwindowMenu();
 
-        TabWindowPage tabWindowPage = new TabWindowPage(driver);
+        TabWindowPage tabWindowPage = new TabWindowPage(getDriver());
         tabWindowPage.dealTabProcess();
         tabWindowPage.dealWindowProcess();
 

@@ -15,16 +15,16 @@ public class AlertPage extends BasePage{
     }
 
     @FindBy(id = "alertButton")
-    public WebElement okAlertElement;
+    private WebElement okAlertElement;
 
     @FindBy(id = "timerAlertButton")
-    public  WebElement timerAlertButtonElement;
+    private  WebElement timerAlertButtonElement;
 
     @FindBy(id = "confirmButton")
-    public  WebElement alertConfirmElement;
+    private  WebElement alertConfirmElement;
 
-    @FindBy(id = "promptButton")
-    public WebElement promptButtonAlertElement;
+    @FindBy(id = "promtButton")
+    private WebElement promtButtonAlertElement;
 
 
     public void dealAlertProcess(String text){
@@ -34,7 +34,7 @@ public class AlertPage extends BasePage{
         alertMethods.acceptAlert();
         elementMethods.clickJSElement(alertConfirmElement);
         alertMethods.dismissAlert();
-        elementMethods.clickElement(promptButtonAlertElement);
+        elementMethods.clickElement(promtButtonAlertElement);
         alertMethods.fillAlert(text);
     }
 

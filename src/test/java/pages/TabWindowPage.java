@@ -13,9 +13,9 @@ public class TabWindowPage extends BasePage {
 
 
     @FindBy(id = "tabButton")
-    public WebElement tabButtonElement;
+    private WebElement tabButtonElement;
     @FindBy(id = "windowButton")
-    public WebElement windowButtonElement;
+    private WebElement windowButtonElement;
 
     public TabWindowPage(WebDriver driver) {
         super(driver);

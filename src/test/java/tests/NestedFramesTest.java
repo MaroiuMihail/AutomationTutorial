@@ -19,21 +19,21 @@ public class NestedFramesTest extends SharedData {
     public void metodaTest(){
 
 
-        ElementMethods elementMethods = new ElementMethods(driver);
-        FrameMethods frameMethods = new FrameMethods(driver);
+        ElementMethods elementMethods = new ElementMethods(getDriver());
+        FrameMethods frameMethods = new FrameMethods(getDriver());
 
-        HomePage homePage = new HomePage(driver);
+        HomePage homePage = new HomePage(getDriver());
         homePage.clickAlertFrameWindow();
 
-        WebElement nestedFramesSubMenu = driver.findElement(By.xpath("//span[text()='Nested Frames']"));
+        WebElement nestedFramesSubMenu = getDriver().findElement(By.xpath("//span[text()='Nested Frames']"));
         elementMethods.clickJSElement(nestedFramesSubMenu);
 
         frameMethods.switchToSpecificIframe("frame1");
 
-        WebElement childFrameElement = driver.findElement(By.tagName("iframe"));
+        WebElement childFrameElement = getDriver().findElement(By.tagName("iframe"));
         frameMethods.switchToSpecificIframeByElement(childFrameElement);
 
-        WebElement childSampleTextElement = driver.findElement(By.tagName("p"));
+        WebElement childSampleTextElement = getDriver().findElement(By.tagName("p"));
         System.out.println(childSampleTextElement.getText());
 
     }

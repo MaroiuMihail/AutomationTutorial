@@ -15,9 +15,9 @@ public class FramesPage extends BasePage {
     }
 
     @FindBy(id = "sampleHeading")
-    public WebElement sampleTextElement;
+    private WebElement sampleTextElement;
     @FindBy(id = "sampleHeading")
-    public WebElement secondSampleTextElement;
+    private WebElement secondSampleTextElement;
 
 
 

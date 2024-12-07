@@ -26,10 +26,10 @@ public class WebTabelTest extends SharedData {
     public void metodaTest () {
 
 
-        HomePage homePage = new HomePage(driver);
+        HomePage homePage = new HomePage(getDriver());
         homePage.clickElementsMenu();
 
-        ElementPage elementPage = new ElementPage(driver);
+        ElementPage elementPage = new ElementPage(getDriver());
         elementPage.clickWebTable();
 
         String firstNameValue = "Maroiu";
@@ -39,7 +39,7 @@ public class WebTabelTest extends SharedData {
         String salaryLabelValue = "3000";
         String departmentValue = "Test";
 
-        WebTablePage webTablePage = new WebTablePage(driver);
+        WebTablePage webTablePage = new WebTablePage(getDriver());
         webTablePage.createProcess(firstNameValue, lastNameValue, userEmailValue, ageValue,
                 salaryLabelValue, departmentValue,3);
 
@@ -56,6 +56,6 @@ public class WebTabelTest extends SharedData {
 
         webTablePage.deleteProcess(3);
 
-        driver.quit();
+        getDriver().quit();
     }
 }
