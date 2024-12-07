@@ -1,24 +1,10 @@
 package tests;
 
-import helpMethods.AlertMethods;
-import helpMethods.ElementMethods;
-import helpMethods.TabMethods;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.ElementPage;
 import pages.HomePage;
 import pages.WebTablePage;
 import sharedData.SharedData;
-
-import java.sql.BatchUpdateException;
-import java.util.List;
-import java.util.TreeSet;
 
 public class WebTabelTest extends SharedData {
 

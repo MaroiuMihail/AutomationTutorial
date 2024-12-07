@@ -1,12 +1,5 @@
 package tests;
 
-import helpMethods.ElementMethods;
-import helpMethods.FrameMethods;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.Test;
 import pages.AlertFrameWindowPage;
 import pages.FramesPage;

@@ -2,8 +2,6 @@ package tests;
 
 import helpMethods.ElementMethods;
 import org.openqa.selenium.*;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.PracticeFormPage;
@@ -139,16 +137,16 @@ public class PracticeFormTest extends SharedData {
         Assert.assertEquals(lableList.get(7).getText(), "Picture");
         Assert.assertEquals(lableList.get(8).getText(), "Address");
         Assert.assertEquals(lableList.get(9).getText(), "State and City");
-//
-//        Assert.assertEquals(valueList.get(0).getText(), firstNameValue+" "+lastNameValue);
-//        Assert.assertEquals(valueList.get(1).getText(),userEmailValue);
-//        Assert.assertEquals(valueList.get(2).getText(),genderValue);
-//        Assert.assertEquals(valueList.get(3).getText(),mobilenumberValue);
-//        Assert.assertEquals(valueList.get(5).getText(),subjectValues);
-//        Assert.assertEquals(valueList.get(6).getText(),hobbiesValue);
-//        Assert.assertEquals(valueList.get(7).getText(),pictureElement);
-//        Assert.assertEquals(valueList.get(8).getText(),currentAddressValue);
-//        Assert.assertEquals(valueList.get(9).getText(),stateInputElement+" "+cityInputValue);
+
+        Assert.assertEquals(valueList.get(0).getText(), firstNameValue+" "+lastNameValue);
+        Assert.assertEquals(valueList.get(1).getText(),userEmailValue);
+        Assert.assertEquals(valueList.get(2).getText(),genderValue);
+        Assert.assertEquals(valueList.get(3).getText(),mobilenumberValue);
+        Assert.assertEquals(valueList.get(5).getText(),subjectValues);
+        Assert.assertEquals(valueList.get(6).getText(),hobbiesValue);
+        Assert.assertEquals(valueList.get(7).getText(),pictureElement);
+        Assert.assertEquals(valueList.get(8).getText(),currentAddressValue);
+        Assert.assertEquals(valueList.get(9).getText(),stateInputElement+" "+cityInputValue);
 
     }
 }
