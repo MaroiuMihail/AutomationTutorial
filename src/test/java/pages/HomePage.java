@@ -12,6 +12,8 @@ public class HomePage extends BasePage{
     private WebElement alertFrameWindowMenu;
     @FindBy(xpath = "//h5[text()='Elements']")
     private WebElement elementsMenu;
+    @FindBy(xpath = "//h5[text()='Forms']")
+    private WebElement formsMenu;
 
     public HomePage(WebDriver driver) {
         super(driver);
@@ -23,5 +25,9 @@ public class HomePage extends BasePage{
     public void clickElementsMenu(){
         elementMethods.clickJSElement(elementsMenu);
     }
+    public void clickFormsMenu() {
+        elementMethods.clickJSElement(formsMenu);
 
+    }
 }
+
